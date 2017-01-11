@@ -1,0 +1,24 @@
+Triple Double                                                                           	APCS1 pd 05
+Ibnul Jahan, Mark Shafran                                                               	2017-01-11
+Card Games: (You Don’t Need a Poker Face If You’re Playing in Command Line)
+
+To Do List:
+
+1)Create initial empty driver file called Woo.java that imports Keyboard.java and has an empty main method 
+
+2)Fill the main method with the introductory text (i.e. "Welcome to our game. Please select your game...") and have Woo.java read the user's response and game choice
+
+3)Create a Card.java that lays down the base rules for what a card is. It has an int value attribute, an int numerical attribute, an int suit attribute, a custom built compareTo() and a custom toString().
+
+4)Create a CardGame.java with methods to create an ArrayList that would serve as the deck of cards, to shuffle the deck by randomizing the ArrayList, and to deal cards to players by removing cards from the ArrayList one by one
+
+5)Create a Player.java that has the methods required to play a turn and check for victory.
+	At this point we will have the basic superclasses written out for BlackJack, and it has a structure that will make it easy for us to expand to include other games. Now comes time for the explicitly BlackJack coding.
+
+6)Create a BlackJack.java that extends CardGame.java and uses its methods to deal out cards.
+
+7)Create a BlackJackAI.java that extends Player.java and has more specified methods and a reasoning as to whether or not it will ask to dealer to hit it. It can count the cards shown, count the cards in its hand, and ask to receive a card.
+	At this point we hope to have a working version of the game that does not include a User. It will ask the User to specify how many people are playing in the game, and create that many instances BlackJackAI.java and have them play each other.
+
+8)Create a BlackJackUser.java that extends Player.java and works as the alternative to BlackJackAI.java. It will ask the user whether or not they want to be hit at the beginning of the turn, and based on the issued response will take a card or pass their turn.
+	This will mark the completion of our MVP, which is a working game of BlackJack. From here on outward, our goals are to implement multiple other games and turn the collection of card games into a casino.
