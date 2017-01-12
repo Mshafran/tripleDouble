@@ -32,7 +32,8 @@ public class BlackJack extends CardGame{
 	    return;
 	} else {
 	    players = new Player[numPlayers];
-	    for (int i = 0; i <players.length; i++){
+	    players[0] = new BlackjackUser();
+	    for (int i = 1; i <players.length; i++){
 		players[i] = new BlackJackAI();
 	    }
 	    System.out.println("SKRT");
@@ -54,7 +55,8 @@ public class BlackJack extends CardGame{
     }
     public static void play(){
 	while (deck.size()>0){
-	    for (int i = 0; i < players.length; i++){
+	    ((BlackjackUser)players[0]).move();
+	    for (int i = 1; i < players.length; i++){
 		((BlackJackAI)players[i]).move();
 	    }
 	    print();
