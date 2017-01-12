@@ -13,16 +13,20 @@ public class Card{
 	char val = 'X';
 	char symbol = 'X';
 	if (suit == 0){
-	    symbol = (char)(suit+4);
+	    //symbol = (char)(suit+4);
+	    symbol = '\u2666';
 	}
 	if (suit == 1){
-	    symbol = (char)(suit+4);
+	    // symbol = (char)(suit+4);
+	    symbol = '\u2663';
 	}
 	if (suit == 2){
-	    symbol = (char)(suit+1);
+	    //symbol = (char)(suit+1);
+	    symbol = '\u2764';
 	}
 	if (suit == 3){
-	    symbol = (char)(suit+3);
+	    // symbol = (char)(suit+3);
+	    symbol = '\u2660';
 	}
 	if (value == 1){
 	    val = 'A';
