@@ -1,6 +1,8 @@
 public class Card{
     public int value;
     public int suit;
+    //Spades = 3, Hearts = 2 ...
+    //hearts/diamonds/clubs/spades -- 3/4/5/6
 
     public Card(int Val, int Suit){
 	value = Val;

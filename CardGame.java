@@ -10,7 +10,9 @@ public class CardGame {
 
     public static void main(String[] args){
 	setup();
+	//deal();
 	print();
+	//play();
     }
     public static void setup(){
 	addCards();
@@ -34,8 +36,11 @@ public class CardGame {
     }
     public static void shuffleDeck(){
 	int randomIndex;
+	//setup for traversal fr right to left
 	for( int i = deck.size()-1; i > 0; i-- ) {
+	    //pick an index at random
             randomIndex = (int)( (i+1) * Math.random() );
+	    //swap the values at position i and randomIndex
             deck.set( i, deck.set( randomIndex, deck.get(i) ) );
         }
     }
@@ -47,11 +52,25 @@ public class CardGame {
 	}
     }
     public static void deal(){
+	//int size = deck.size();
+	//for (int i = 0; i < size; i++){
+	//players[i%4].hand.add(deck.remove(0));
+	//}
 	int i = 0;
 	while (deck.size()>0){
+	    //players[deck.size()%players.length].hand.add(deck.remove(0));
 	    players[i].hand.add(deck.remove(0));
 	    i++;
 	    i %= players.length;
 	}
     }
+    /* public static void play(){
+	while (deck.size()>0){
+	    for (int i = 0; i < players.length; i++){
+	        players[i].move();
+	    }
+	    print();
+	}
+    }
+    */
 }
