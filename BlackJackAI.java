@@ -1,4 +1,4 @@
-public class BlackJackAI extends Player{
+public class BlackJackAI extends BlackjackPlayer{
 
     boolean over = false;
     int runCount = 0;
