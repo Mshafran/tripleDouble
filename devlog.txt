@@ -51,13 +51,13 @@ tales of wisdom gained...
 --------------------------------------------------------------
 Ibnul :: <***This includes all code done before this date as well.***
 Added basic shell files for most of the classes we have discussed in class, and talked about on our diagrams. Made a class for a basic Player and for the computer BlackJack player, but not the User because the former was easier to test to see success. Made a basic CardGame class that can do things such as make and shuffle a deck, and made a basic BlackJack class that extends it and cycles through all the players and have them move. Made a Card class, but this will definitely require changes to fix the fact that J,Q, and K all equal 10. Lastly has a Woo that allows to User to start a game of BlackJack.>
-Mark :: replaced all of shell files with semi-functioning files, added a BlackjackUser class that allows the user to play as well.
+Mark :: replaced all of shell files with semi-functioning files, added a BlackjackUser class that allows the user to play as well, but did not implement it with the rest of the code
 ==============================================================
 
 2017-01-12
 --------------------------------------------------------------
-Ibnul :: updated all of files, fixed issue with suits not showing in Linux,
-Mark :: committed the changes I made yesterday to the repo
+Ibnul :: updated all of files, fixed issue with suits not showing in Linux, implemented BlackjackUser to work in conjunction with the rest of the code
+Mark :: Updated flowchart and UML diagram with more precise and up-to-date information.
 ==============================================================
 
 yyyy-mm-dd
