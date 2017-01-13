@@ -54,6 +54,7 @@ public class BlackJack extends CardGame{
 	}
     }
     public static void play(){
+	printInstructions();
 	while (deck.size()>0){
 	    ((BlackjackUser)players[0]).move();
 	    for (int i = 1; i < players.length; i++){
@@ -68,6 +69,12 @@ public class BlackJack extends CardGame{
 	    }
 	}
 	//System.out.println(totalBlackJacks);
+    }
+    public static void printInstructions(){
+	System.out.println("To hit, type 'hit'");
+	System.out.println("To see the sum of your hand, type 'sum'");
+	System.out.println("To end your turn, type 'end'");
+	System.out.println("If you forget how to play, type 'help'");
     }
     
 

@@ -28,9 +28,6 @@ public class BlackjackUser extends Player{
     public void move() {
 	boolean turn = true;
 	System.out.println("This is currently your hand: " + getHand());
-	System.out.println("To hit, type 'hit'");
-	System.out.println("To see the sum of your hand, type 'sum'");
-	System.out.println("To end your turn, type 'end'");
 	while ((turn == true) && (handSum <= 21)) {
 	    String input = Keyboard.readWord();
 	    if (input.equals("hit")) {
@@ -38,8 +35,14 @@ public class BlackjackUser extends Player{
 	    } else if (input.equals("sum")) {
 	        sumHand();
 		System.out.println("" + handSum);
+		System.out.println("This is your hand: " + getHand());
+		//break;
 	    } else if (input.equals("end")) {
 		turn = false;
+	    } else if (input.equals("help")) {
+		BlackJack.printInstructions();
+	    } else {
+		System.out.println("Sorry, but what?");
 	    }
 	}
 	return;
