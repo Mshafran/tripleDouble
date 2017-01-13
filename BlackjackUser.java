@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import cs1.Keyboard;
 
-public class BlackjackUser extends Player{
+public class BlackjackUser extends BlackjackPlayer{
     int handSum = 0;
 
     public boolean myTurn = false;
