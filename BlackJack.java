@@ -63,6 +63,7 @@ public class BlackJack extends CardGame{
 	    print();
 	    turns++;
 	    if (turns > 10){
+			System.out.println("10 turns have passed");
 		System.out.println(totalBlackJacks);
 		System.out.println(winners);
 		return;
