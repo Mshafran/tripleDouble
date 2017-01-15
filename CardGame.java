@@ -23,8 +23,9 @@ public class CardGame {
     public static void print(){
 	System.out.println("DECK: "+deck);
 	System.out.println("PILE: "+pile);
-	for (int i = 0; i < players.length; i++){
-	    System.out.println("Player " + i + players[i].hand);
+	System.out.println("This be you "+ players[0].hand);
+	for (int i =1; i < players.length; i++){
+	    System.out.println("Player " + i +"    " + players[i].hand);
 	}
     }
     public static void addCards(){

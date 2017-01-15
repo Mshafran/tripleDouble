@@ -1,12 +1,22 @@
 public class Card{
     public int value;
     public int suit;
+    public int BJval;
     //Spades = 3, Hearts = 2 ...
     //hearts/diamonds/clubs/spades -- 3/4/5/6
 
     public Card(int Val, int Suit){
 	value = Val;
 	suit = Suit;
+	if (Val == 11){
+	    BJval = 10;
+	} else if (Val == 12) {
+	    BJval = 10;
+	} else if (Val == 13) {
+	    BJval = 10;
+	} else {
+	    BJval = Val;
+	}
     }
 
     public String toString(){

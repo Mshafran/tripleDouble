@@ -5,6 +5,7 @@ public class BlackJack extends CardGame{
     static int turns = 0;
     public static int totalBlackJacks = 0;
     public static ArrayList<Player> winners = new ArrayList<Player>();
+    public static boolean allPassed;
     public static void main(String[] args){
 	setup();
 	//deal();
@@ -34,7 +35,7 @@ public class BlackJack extends CardGame{
 	    players = new Player[numPlayers];
 	    players[0] = new BlackjackUser();
 	    for (int i = 1; i <players.length; i++){
-		players[i] = new BlackJackAI();
+		players[i] = new BlackJackAI(i);
 	    }
 	    System.out.println("SKRT");
 	    return;
@@ -63,13 +64,27 @@ public class BlackJack extends CardGame{
 	    print();
 	    turns++;
 	    if (turns > 10){
-			System.out.println("10 turns have passed");
+		System.out.println("10 turns have passed");
 		System.out.println(totalBlackJacks);
 		System.out.println(winners);
 		return;
 	    }
+	    allPassed = true;
+	    for (int i = 0; i < players.length; i ++){
+		System.out.println(CardGame.players[i].passed);
+		if (!CardGame.players[i].passed){
+		    System.out.println("Player "+i+" didnt pass"); 
+		    allPassed = false;
+		}
+	    }
+	    if (allPassed){
+		System.out.println("Every Player passed this round, and thus the game is finished");
+		return;
+	    }
 	}
-	//System.out.println(totalBlackJacks);
+
+	System.out.println("\n\n\n\n");
+	//	Woo.main(args);
     }
     public static void printInstructions(){
 	System.out.println("To hit, type 'hit'");

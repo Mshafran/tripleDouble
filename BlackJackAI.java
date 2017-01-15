@@ -1,33 +1,43 @@
 public class BlackJackAI extends BlackjackPlayer{
 
-    boolean over = false;
+    boolean passed = false;
     int runCount = 0;
     int handSum = 0;
-    public void move(){
+    int player;
+    public BlackJackAI( int i ){
+	player = i;
+    }
+    
+     public int sumHand(){
+	handSum =0;
 	for (int i = 0; i < hand.size(); i++){
-	    handSum += hand.get(i).value;
+	    handSum += hand.get(i).BJval;
 	}
-	
+	return handSum;
+    }
+    public void move(){
+	passed = false;
+        sumHand();
 	if (handSum > 21){
-	    over = true;
+	    BlackJack.players[player].passed = true;
 	    return;
 	} else if (handSum == 21){
 	    checkWinner();
 	    BlackJack.totalBlackJacks++;
+	    BlackJack.players[player].passed = true;
 	    return;
 	}
-	for (int loop = 0; loop < BlackJack.pile.size(); loop++){
 
+	runCount = 0;
+	for (int loop = 0; loop < BlackJack.pile.size(); loop++){
 	    //System.out.println("hi");
-	    runCount = 0;
-	    handSum = 0;
-	    if (BlackJack.pile.get(loop).value<= 6 && BlackJack.pile.get(loop).value>=2){
+	    if (BlackJack.pile.get(loop).BJval<= 6 && BlackJack.pile.get(loop).BJval>=2){
 		runCount+=1;
 	    }
-	    if (BlackJack.pile.get(loop).value> 6 && BlackJack.pile.get(loop).value< 10){
+	    if (BlackJack.pile.get(loop).BJval> 6 && BlackJack.pile.get(loop).BJval< 10){
 		runCount+=1;
 	    }
-	    if (BlackJack.pile.get(loop).value>= 10 || BlackJack.pile.get(loop).value==1){
+	    if (BlackJack.pile.get(loop).BJval>= 10 || BlackJack.pile.get(loop).BJval==1){
 		runCount-=1;
 	    }
 	    //System.out.println("by");
@@ -40,6 +50,8 @@ public class BlackJackAI extends BlackjackPlayer{
 	if ((runCount >= 0 && handSum < 21) || handSum < 14){
 	    hitme();
 	    System.out.println("hit");
+	} else {
+	    BlackJack.players[player].passed = true;
 	}
     }
     public void hitme(){

@@ -3,6 +3,7 @@ import cs1.Keyboard;
 
 public class BlackjackUser extends BlackjackPlayer{
     int handSum = 0;
+    public boolean passed = true;
 
     public boolean myTurn = false;
     public String getHand() {
@@ -15,7 +16,7 @@ public class BlackjackUser extends BlackjackPlayer{
     public int sumHand(){
 	handSum =0;
 	for (int i = 0; i < hand.size(); i++){
-	    handSum += hand.get(i).value;
+	    handSum += hand.get(i).BJval;
 	}
 	return handSum;
     }
@@ -27,17 +28,22 @@ public class BlackjackUser extends BlackjackPlayer{
 
     public void move() {
 	boolean turn = true;
+	passed = false;
 	System.out.println("This is currently your hand: " + getHand());
 	while ((turn == true) && (handSum <= 21)) {
 	    String input = Keyboard.readWord();
 	    if (input.equals("hit")) {
 		hitme();
+		turn = false;
+		sumHand();
+		System.out.println("This is your sum: " + handSum);
 	    } else if (input.equals("sum")) {
 	        sumHand();
 		System.out.println("" + handSum);
 		System.out.println("This is your hand: " + getHand());
 		//break;
 	    } else if (input.equals("end")) {
+		BlackJack.players[0].passed = true;
 		turn = false;
 	    } else if (input.equals("help")) {
 		BlackJack.printInstructions();
