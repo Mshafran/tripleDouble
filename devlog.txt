@@ -60,6 +60,24 @@ Ibnul :: updated all of files, fixed issue with suits not showing in Linux, impl
 Mark :: Updated flowchart and UML diagram with more precise and up-to-date information.
 ==============================================================
 
+2017-01-13
+--------------------------------------------------------------
+Ibnul :: Fixed error where program would wait for an input that was never going to arrive. Also fixed and simplified an inheritance algorithm.
+Mark :: Talked with Ibnul about the code that we were having trouble fixing and helped Ibnul reach the solutions.
+==============================================================
+
+2017-01-15
+--------------------------------------------------------------
+Ibnul :: Set the value of all face cards to 10, and started to work on what the program should do when the game finished.
+Mark :: Provided a lot of ideas and edited code that Ibnul sent him manually that seemed to not work. Also updated the UML diagram and the flowchart. Started working on ways to code the next game in the sequence.
+==============================================================
+
+2017-01-16
+--------------------------------------------------------------
+Ibnul :: Finished coding the endgame sequence and determined ways for the code to print and display the winners of the game.
+Mark :: Continued working on next game, and talked to Ibnul a lot about what would be the most simple and efficient ways for them to proceed
+==============================================================
+
 yyyy-mm-dd
 --------------------------------------------------------------
 <Member> :: <Thing member did.>
