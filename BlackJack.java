@@ -8,13 +8,39 @@ public class BlackJack extends CardGame{
     public static boolean allPassed;
     public static void main(String[] args){
 	setup();
-	//deal();
-	print();
+	//print();
 	play();
+	finish();
 	System.out.println("You currently have $" + Woo.money + ".");
+	playAgain();
 	
 	
      }
+    public static void playAgain(){
+	System.out.println("Do You Want To Give It Another Go?   \n1. Yea, I'm Game \n2. Nah, Let's Try Something Else");
+	int response = Keyboard.readInt();
+	if (response == 1) {
+	    main(null);
+	} else if (response == 2 ){
+	    Woo.main(null);
+	} else {
+	    System.out.println("I don't understand, so I'll ask again");
+	    playAgain();
+	}
+    }
+    public static void printAllBut1(){
+	System.out.println("DECK: "+deck);
+	System.out.println("PILE: "+pile);
+	System.out.println("This be you "+ players[0].hand);
+	for (int i =1; i < players.length; i++){
+	    String knownHand = "[??";
+	    for ( int cards = 1; cards < players[i].hand.size(); cards++){
+		knownHand+=", "+ players[i].hand.get(cards);
+	    }
+	    knownHand += "]";
+	    System.out.println("Player " + i +"    " + knownHand);
+	}
+    }
      public static void setup(){
 	addCards();
 	addCards();
@@ -37,7 +63,7 @@ public class BlackJack extends CardGame{
 	    for (int i = 1; i <players.length; i++){
 		players[i] = new BlackJackAI(i);
 	    }
-	    System.out.println("SKRT");
+	    System.out.println("\n\n\nTime to BlackJack\n\n");
 	    return;
 	}
     }
@@ -61,7 +87,7 @@ public class BlackJack extends CardGame{
 	    for (int i = 1; i < players.length; i++){
 		((BlackJackAI)players[i]).move();
 	    }
-	    print();
+	    //print();
 	    turns++;
 	    if (turns > 10){
 		System.out.println("10 turns have passed");
@@ -73,25 +99,50 @@ public class BlackJack extends CardGame{
 	    for (int i = 0; i < players.length; i ++){
 		System.out.println(CardGame.players[i].passed);
 		if (!CardGame.players[i].passed){
-		    System.out.println("Player "+i+" didnt pass"); 
+		    System.out.println("Player "+i+" hit"); 
 		    allPassed = false;
+		} else {
+		    System.out.println("Player "+i+" passed");
 		}
 	    }
+	    System.out.println("\n");
+	    printAllBut1();
 	    if (allPassed){
 		System.out.println("Every Player passed this round, and thus the game is finished");
 		return;
 	    }
+	   
 	}
 
-	System.out.println("\n\n\n\n");
-	//	Woo.main(args);
     }
     public static void printInstructions(){
+	System.out.println("These are the rules");
 	System.out.println("To hit, type 'hit'");
 	System.out.println("To see the sum of your hand, type 'sum'");
 	System.out.println("To end your turn, type 'end'");
 	System.out.println("If you forget how to play, type 'help'");
     }
-    
+    public static void finish(){
+	int biggestHand;
+	if (((BlackjackUser)players[0]).sumHand() <= 21){
+	    biggestHand =((BlackjackUser)players[0]).sumHand();
+	} else {biggestHand = 0;}
+	ArrayList<String> winners = new ArrayList<String>();
+	for ( int i = 1; i < players.length; i ++){
+	    if (((BlackJackAI)players[i]).sumHand() > biggestHand && ((BlackJackAI)players[i]).sumHand() <= 21){
+		biggestHand = ((BlackJackAI)players[i]).sumHand();
+	    }
+	}
+	if (((BlackjackUser)players[0]).sumHand() == biggestHand){
+	    winners.add("You");
+	}
+	for ( int i = 1; i < players.length; i ++){
+	    if (((BlackJackAI)players[i]).sumHand() == biggestHand){
+		winners.add("Player " +((BlackJackAI)players[i]).player);
+	    }
+	}
+	System.out.println("These are the winners " + winners);
+	
+    }
 
 }

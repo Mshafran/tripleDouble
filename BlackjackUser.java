@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import cs1.Keyboard;
 
-public class BlackjackUser extends BlackjackPlayer{
+public class BlackjackUser extends Player{
     int handSum = 0;
     public boolean passed = true;
 
@@ -23,7 +23,7 @@ public class BlackjackUser extends BlackjackPlayer{
     public void hitme() {
 	BlackJack.pile.add(BlackJack.deck.get(0));
 	hand.add(BlackJack.deck.remove(0));
-	System.out.println("This is your new hand: " + getHand());
+	System.out.println("<<<<<This is your new hand: " + getHand() + ">>>>>");
     }
 
     public void move() {
@@ -50,6 +50,9 @@ public class BlackjackUser extends BlackjackPlayer{
 	    } else {
 		System.out.println("Sorry, but what?");
 	    }
+	}
+	if (sumHand() > 21) {
+	    System.out.println("You busted, let's hope everyone else does too");
 	}
 	return;
     }

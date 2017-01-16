@@ -1,4 +1,4 @@
-public class BlackJackAI extends BlackjackPlayer{
+public class BlackJackAI extends Player{
 
     boolean passed = false;
     int runCount = 0;
@@ -49,7 +49,7 @@ public class BlackJackAI extends BlackjackPlayer{
 	//players stop hittin with a negative runcount and their handsum is over 30
 	if ((runCount >= 0 && handSum < 21) || handSum < 14){
 	    hitme();
-	    System.out.println("hit");
+	    //System.out.println("hit");
 	} else {
 	    BlackJack.players[player].passed = true;
 	}
@@ -57,7 +57,7 @@ public class BlackJackAI extends BlackjackPlayer{
     public void hitme(){
 	BlackJack.pile.add(BlackJack.deck.get(0));
 	hand.add(BlackJack.deck.remove(0));
-	System.out.println(runCount);
+	//System.out.println(runCount);
     }
     public void checkWinner(){
 	if (handSum == 21){
