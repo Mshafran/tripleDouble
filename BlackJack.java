@@ -11,7 +11,7 @@ public class BlackJack extends CardGame{
 	//print();
 	play();
 	finish();
-	System.out.println("You currently have $" + Woo.money + ".");
+	//	System.out.println("You currently have $" + Woo.money + ".");
 	playAgain();
 	
 	
@@ -20,6 +20,9 @@ public class BlackJack extends CardGame{
 	System.out.println("Do You Want To Give It Another Go?   \n1. Yea, I'm Game \n2. Nah, Let's Try Something Else");
 	int response = Keyboard.readInt();
 	if (response == 1) {
+	    turns = 0;
+	    winners = new ArrayList<Player>();
+	    allPassed = true;
 	    main(null);
 	} else if (response == 2 ){
 	    Woo.main(null);
