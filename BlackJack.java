@@ -20,9 +20,7 @@ public class BlackJack extends CardGame{
 	System.out.println("Do You Want To Give It Another Go?   \n1. Yea, I'm Game \n2. Nah, Let's Try Something Else");
 	int response = Keyboard.readInt();
 	if (response == 1) {
-	    turns = 0;
-	    winners = new ArrayList<Player>();
-	    allPassed = true;
+	    reset();
 	    main(null);
 	} else if (response == 2 ){
 	    Woo.main(null);
@@ -30,6 +28,12 @@ public class BlackJack extends CardGame{
 	    System.out.println("I don't understand, so I'll ask again");
 	    playAgain();
 	}
+    }
+    public static void reset(){
+	resetDecks();
+	turns = 0;
+	winners = new ArrayList<Player>();
+	allPassed = true;
     }
     public static void printAllBut1(){
 	System.out.println("DECK: "+deck);

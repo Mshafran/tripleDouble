@@ -13,6 +13,7 @@ public class CardGame {
 	//deal();
 	print();
 	//play();
+	//playAgain();
     }
     public static void setup(){
 	addCards();
@@ -74,4 +75,25 @@ public class CardGame {
 	}
     }
     */
+
+    public static void playAgain(){
+	System.out.println("Do You Want To Give It Another Go?   \n1. Yea, I'm Game \n2. Nah, Let's Try Something Else");
+	int response = Keyboard.readInt();
+	if (response == 1) {
+	    reset();
+	    main(null);
+	} else if (response == 2 ){
+	    Woo.main(null);
+	} else {
+	    System.out.println("I don't understand, so I'll ask again");
+	    playAgain();
+	}
+    }
+    public static void reset(){
+	resetDecks();
+    }
+    public static void resetDecks(){
+	deck = new ArrayList<Card>();
+	pile = new ArrayList<Card>();
+    }
 }

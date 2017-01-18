@@ -6,11 +6,14 @@ public class Woo {
     public static void main(String[] args){
 	System.out.println("Hank Hank it be Casino time");
 	System.out.println("What game do you want to play?");
-	System.out.println("1. BlackJack \n2. war \n3. CardGame (General)");
-	if (Keyboard.readInt() == 1){
+	System.out.println("1. BlackJack \n2. war \n3. Crazy8s \n4. CardGame (General)");
+	int response = Keyboard.readInt();
+	if (response == 1){
 	    BlackJack.main(args);
-	}else if (Keyboard.readInt() == 2){
-	    War.main(args);
+	} else if (response == 2){
+	    //War.main(args);
+	} else if (response == 3){
+	    Crazy8s.main(args);
 	} else {
 	    CardGame.main(args);
 	}

@@ -5,6 +5,8 @@ public class Player{
     public boolean myTurn = false;
     public boolean passed;
 
+    int player;
+
     
     
 }
