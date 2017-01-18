@@ -78,6 +78,13 @@ Ibnul :: Finished coding the endgame sequence and determined ways for the code t
 Mark :: Continued working on next game, and talked to Ibnul a lot about what would be the most simple and efficient ways for them to proceed
 ==============================================================
 
+2017-01-17
+--------------------------------------------------------------
+Ibnul :: Started work on a Crazy8s game (what we actually meant by Nines in our game proposal)
+Mark :: Started work on the game War.
+==============================================================
+
+
 yyyy-mm-dd
 --------------------------------------------------------------
 <Member> :: <Thing member did.>
