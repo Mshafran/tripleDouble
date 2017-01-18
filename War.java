@@ -4,10 +4,15 @@ import cs1.Keyboard;
 public class War extends CardGame {
     static int turns = 0;
     public static ArrayList<Player> winners = new ArrayList<Player>();
+    
+    public static WarUser user;
+    public static WarAI AI;
     public static void main(String[] args){
 	setup();
 	//print();
+	System.out.println("setup");
 	play();
+System.out.println("play");
 	finish();
 	//	System.out.println("You currently have $" + Woo.money + ".");
 	playAgain();
@@ -36,8 +41,8 @@ public class War extends CardGame {
      }
     public static void makePlayers(){
 	System.out.println("This is a 2 player game");
-        WarUser user  = new WarUser();
-        WarAI AI = new WarAI();
+        user  = new WarUser();
+        AI = new WarAI();
 	System.out.println("\n\n\nPrepare For Battle, My Good Sir!\n\n");
 	return;
 	}
@@ -45,14 +50,9 @@ public class War extends CardGame {
     
     //deals two cards to each player initally
     public static void deal(){
-	int origDeckSize =  deck.size();
-	int i = 0;
-	//while (players[players.length-1].hand.size()<2){
-	while (deck.size() > origDeckSize - (players.length*2) ){
-	//players[deck.size()%players.length].hand.add(deck.remove(0));
-	    players[i].hand.add(deck.remove(0));
-	    i++;
-	    i %= players.length;
+        while (deck.size()>0){
+	    user.hand.add(deck.remove(0));
+	    AI.hand.add(deck.remove(0));
 	}
     }
     public static void play(){
@@ -60,39 +60,41 @@ public class War extends CardGame {
 	while ((((WarAI)AI).hand.size() < 52) && (((WarUser)user).hand.size() < 52)){
 	    ((WarUser)user).move();
 	    ((WarAI) AI).move();
-	    if (((WarAI) AI).table.get(0).BJVal > ((WarUser)user).table.get(0).BJVal) {
+	    if (((WarAI) AI).table.get(0).value > ((WarUser)user).table.get(0).value) {
 		System.out.println("Thou hast LOST this endeavor!");
 		System.out.println("Your card was: " + ((WarUser)user).table.get(0));
 		System.out.println("Your opponents card was: " + ((WarAI) AI).table.get(0));
 	        ((WarAI) AI).hand.add(((WarAI) AI).table.remove(0));
 	        ((WarAI) AI).hand.add(((WarUser)user).table.remove(0));
 	    }
-	    else if (((WarUser)user).table.get(0).BJVal > ((WarAI) AI).table.get(0).BJVal) {
+	    else if (((WarUser)user).table.get(0).value > ((WarAI) AI).table.get(0).value) {
 		System.out.println("Thou hast emerged VICTORIOUS (this time)");
 		System.out.println("Your card was: " + ((WarUser)user).table.get(0));
 		System.out.println("Your opponents card was: " + ((WarAI) AI).table.get(0));
 	        ((WarUser)user).hand.add(((WarAI) AI).table.remove(0));
 	        ((WarUser)user).hand.add(((WarUser)user).table.remove(0));
 	    }
-	    else if (((WarUser)user).table.get(0).BJVal == ((WarAI) AI).table.get(0).BJVal) {
+	    else if (((WarUser)user).table.get(0).value == ((WarAI) AI).table.get(0).value) {
 		System.out.println("There be'ist a tie! THIS MEANS WAR!");
+		System.out.println("Your card was: " + ((WarUser)user).table.get(0));
+		System.out.println("Your opponents card was: " + ((WarAI) AI).table.get(0));
 		boolean tie = true;
 		int tieNo = 1;
 		while (tie == true) {
 		    ((WarAI) AI).tie();
 		    ((WarUser)user).tie();
-		    if (((WarUser)user).table.get(2*tieNo).BJVal == ((WarAI) AI).table.get(2*tieNo).BJVal) {
+		    if (((WarUser)user).table.get(2*tieNo).value == ((WarAI) AI).table.get(2*tieNo).value) {
 				System.out.println("There is still a tie! The war continues!");
 				System.out.println("Your card was: " + ((WarUser)user).table.get(2*tieNo));
 				System.out.println("Your opponents card was: " + ((WarAI) AI).table.get(2*tieNo));
 				tieNo += 1;
 		    }
-		    else if (((WarUser)user).table.get(2*tieNo).BJVal > ((WarAI) AI).table.get(2*tieNo).BJVal) {
+		    else if (((WarUser)user).table.get(2*tieNo).value > ((WarAI) AI).table.get(2*tieNo).value) {
 				System.out.println("Thou hast won the tie!");
 				System.out.println("Your card was: " + ((WarUser)user).table.get(2*tieNo));
 				System.out.println("Your opponents card was: " + ((WarAI) AI).table.get(2*tieNo));
 				System.out.println("Your winnings are: ");
-				for (int x = 0; x < tieNo*2 + 1 ; x++) {
+				for (int x = user.table.size() -1; x > 0  ; x--) {
 				    System.out.println("" + ((WarAI) AI).table.get(x));
 				    System.out.println("" + ((WarUser)user).table.get(x));
 				    ((WarUser)user).hand.add(((WarAI) AI).table.remove(x));
@@ -100,17 +102,18 @@ public class War extends CardGame {
 				}
 				tie = false;
 		    }
-		    else if (((WarUser)user).table.get(2*tieNo).BJVal < ((WarAI) AI).table.get(2*tieNo).BJVal) {
+		    else if (((WarUser)user).table.get(2*tieNo).value < ((WarAI) AI).table.get(2*tieNo).value) {
 				System.out.println("Thou hast Lost the tie!");
 				System.out.println("Your card was: " + ((WarUser)user).table.get(2*tieNo));
 				System.out.println("Your opponents card was: " + ((WarAI) AI).table.get(2*tieNo));
 				System.out.println("Your opponent's winnings are: ");
-				for (int x = 0; x < tieNo*2 + 1 ; x++) {
+				for (int x = user.table.size()-1; x >0  ; x--) {
 				    System.out.println("" + ((WarAI) AI).table.get(x));
 				    System.out.println("" + ((WarUser)user).table.get(x));
 				    ((WarAI) AI).hand.add(((WarAI) AI).table.remove(x));
 				    ((WarAI) AI).hand.add(((WarUser)user).table.remove(x));
 				}
+				System.out.println("etst");
 				tie = false;
 		    }
 		}

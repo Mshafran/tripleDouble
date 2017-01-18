@@ -58,7 +58,7 @@ public class Woo {
 	if (response == 1){
 	    BlackJack.main(args);
 	} else if (response == 2){
-	    //War.main(args);
+	    War.main(args);
 	} else if (response == 3){
 	    Crazy8s.main(args);
 	} else {

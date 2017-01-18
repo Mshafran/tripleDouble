@@ -15,7 +15,6 @@ public void tie() {
     
     public void move() {
 	putCard();
-	turn = false;
 	}
 
     /*public static void main(String[] args) {
