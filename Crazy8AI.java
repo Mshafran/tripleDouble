@@ -25,7 +25,7 @@ public class Crazy8AI extends Crazy8Player{
     public ArrayList<Card> findMatches(){
         matches= new ArrayList<Card>();
         for (int i = 0; i < hand.size(); i++){
-            if ((hand.get(i).suit == topCard.suit) || (hand.get(i).value == topCard.value)) {
+            if ((hand.get(i).suit == topCard.suit) || (hand.get(i).value == topCard.value)  || (hand.get(i).value == 8)) {
                 matches.add(hand.get(i));   
             }
         }

@@ -64,6 +64,9 @@ public class Crazy8s extends CardGame{
 	boolean emptyHand = false;
 	while (!emptyHand){
 	    print();
+	    System.out.println("\n\n\n");
+	    ((Crazy8Player)players[0]).move();
+	    System.out.println("\n\n\n");
 	    for (int i = 1; i < players.length; i++){
 		((Crazy8AI)players[i]).move();
 		//System.out.println("Player " + i + ": " + players[i].hand);
@@ -76,7 +79,7 @@ public class Crazy8s extends CardGame{
 	    for (Player player: players){
 		if (player.hand.size() == 0) {
 		    emptyHand = true;
-		    System.out.println("Player " + ((Crazy8AI)player).player + " has won");
+		    System.out.println("Player " + ((Crazy8Player)player).player + " has won");
 		}
 	    }
 	}
