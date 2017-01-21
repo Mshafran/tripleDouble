@@ -2,20 +2,28 @@ public class Card{
     public int value;
     public int suit;
     public int BJval;
+    public int ChaseVal;
     //Spades = 3, Hearts = 2 ...
     //hearts/diamonds/clubs/spades -- 3/4/5/6
 
     public Card(int Val, int Suit){
 	value = Val;
 	suit = Suit;
+	if (Val == 1) {
+	    ChaseVal = 100;
+	}
 	if (Val == 11){
 	    BJval = 10;
+	    ChaseVal = 20;
 	} else if (Val == 12) {
 	    BJval = 10;
+	    ChaseVal = 40;
 	} else if (Val == 13) {
 	    BJval = 10;
+	    ChaseVal = 50;
 	} else {
 	    BJval = Val;
+	    ChaseVal = Val;
 	}
     }
 
