@@ -81,12 +81,28 @@ Mark :: Continued working on next game, and talked to Ibnul a lot about what wou
 2017-01-17
 --------------------------------------------------------------
 Ibnul :: Started work on a Crazy8s game (what we actually meant by Nines in our game proposal)
-Mark :: Started work on the game War.
+Mark :: Started work on the game War. Created essentially the entire game but it was giving me errors whenever i would try to run it. After 4 hours, I decided to call it quits and that I would discuss it with Ib in class the following day.
 ==============================================================
 
 
-yyyy-mm-dd
+2017-01-18
 --------------------------------------------------------------
-<Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
+Ibnul :: <Thing member did.>
+Mark :: In class, worked together with Ibnul to fix the War class, which was giving me errors previously. All we needed to do was make the AI and the User public static global variables instead of making them non-global. Also updated the README file, but will continue to update it even more as we make more additions to the project.
+==============================================================
+
+2017-01-19
+--------------------------------------------------------------
+Ibnul & Mark :: Worked together in class to fully implement the user class for Crazy8s. This signified the end of work on Crazy8s, as it was fully finished.
+==============================================================
+
+2017-01-20
+--------------------------------------------------------------
+Ibnul & Mark:: In class, discussed the potential expansions we can make to our project before it is due. Concluded that we will be implementing a "Chase the Ace" game, as well as a "Go Fish" game. We also showcased our project to our class visitor, and decided that we would like to present our project on Monday, being the brave and bold souls we are.
+==============================================================
+
+2017-01-21
+--------------------------------------------------------------
+Ibnul :: <Thing member did.>
+Mark :: Wrote the entire Chase the Ace game from start to finish. It is currently fully functional. Updated README file, updated devlog.
 ==============================================================
