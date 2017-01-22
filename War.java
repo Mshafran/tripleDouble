@@ -131,7 +131,7 @@ public class War extends CardGame {//war is a subclass of CardGame
     //---------------------------Step 4 of main method--------------------------------------
     
     public static void finish(){// finishes the game
-	if (((WarUser)user).hand.size() == 52) { // if the user has all the cards
+	if (((WarUser)user).hand.size() > ((WarAI)AI).hand.size()) { // if the user has all the cards
 	    System.out.println("YOU have emerged victorious from this WORLD WAR!");
 	    System.out.println("YOU ARE NOW KING OF THE LAND!");
 	}

@@ -30,7 +30,12 @@ public class WarUser extends Player{
     }
 
     public void tie() {// in case of a tie
-	putCard();// puts down "mystery card"
-	putCard();// puts down card to compare
+	if (hand.size() > 1) { // if can put down the cards
+	    putCard();//puts down "mystery" card
+	    putCard();// puts down card that is compared for the War
+	}
+	else { // if not enough cards
+	    War.finish(); // end the game
+	}
     }
 }
