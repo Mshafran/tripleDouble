@@ -19,6 +19,7 @@ public class Chase extends CardGame {
 	
 	
     }
+
     public static void playAgain(){
 	System.out.println("Do You Want To Give It Another Go?   \n1. Yea, I'm Game \n2. Nah, Let's Try Something Else");
 	int response = Keyboard.readInt();
@@ -59,7 +60,6 @@ public class Chase extends CardGame {
 	    }
 	    else {
 	        user = new ChaseUser(res);
-		System.out.println("asd;fja");
 		for (int x = 0; x  < resp; x++){
 		    System.out.println("asd;fja");
 		    ais.add(new ChaseAI(x, res));

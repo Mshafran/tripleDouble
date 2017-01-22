@@ -7,6 +7,7 @@ public class BlackJack extends CardGame{
     public static ArrayList<Player> winners = new ArrayList<Player>();
     public static boolean allPassed;
     public static void main(String[] args){
+	printRules();
 	setup();
 	//print();
 	play();
@@ -36,8 +37,8 @@ public class BlackJack extends CardGame{
 	allPassed = true;
     }
     public static void printAllBut1(){
-	System.out.println("DECK: "+deck);
-	System.out.println("PILE: "+pile);
+	//System.out.println("DECK: "+deck);
+	//System.out.println("PILE: "+pile);
 	System.out.println("This be you "+ players[0].hand);
 	for (int i =1; i < players.length; i++){
 	    String knownHand = "[??";
@@ -150,6 +151,10 @@ public class BlackJack extends CardGame{
 	}
 	System.out.println("These are the winners " + winners);
 	
+    }
+
+        public static void printRules() {
+		System.out.println("In Blackjack, everyone is dealt out 2 cards, and the goal is to have your hand add up to 21. All number cards are worth their number value. Jacks, Queens, Kings are all worth 10. The Ace is worth 1. Every turn, you can either pass or hit. If you pass, that means you are satisfied with your hand, and it is as close to 21 as you think is possible. If you hit, you are dealt one more card. If your hand is over 21, you automatically lose. The people with the hand whose sum is the closest to 21 win.");
     }
 
 }

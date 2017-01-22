@@ -9,8 +9,8 @@ public class Crazy8s extends CardGame{
     //public static boolean allPassed;
 
     public static void main( String[] args){
+	printRules();
 	setup();
-	System.out.println("finished setup");
 	firstCard();
 	play();
 	playAgain();
@@ -101,5 +101,9 @@ public class Crazy8s extends CardGame{
 	resetDecks();
 	turns = 0;
 	winners = new ArrayList<Player>();
+    }
+
+    public static void printRules() {
+	System.out.println("Eight cards are dealt to each player. The remaining cards of the deck are placed face down at the center of the table. The top card is then turned face up to start the game.Players discard by matching rank or suit with the top card of the discard pile, starting with the player left of the dealer. If a player is unable to match the rank or suit of the top card of the discard pile and does not have an eight, they draw cards from the stockpile until getting a playable card. When a player plays an eight, they must declare the suit that the next player is to play; that player must then follow the named suit or play another eight.The game ends as soon as one player has emptied their hand.");
     }
 }

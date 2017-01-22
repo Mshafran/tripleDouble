@@ -8,11 +8,10 @@ public class War extends CardGame {
     public static WarUser user;
     public static WarAI AI;
     public static void main(String[] args){
+	printRules();
 	setup();
 	//print();
-	System.out.println("setup");
 	play();
-System.out.println("play");
 	finish();
 	//	System.out.println("You currently have $" + Woo.money + ".");
 	playAgain();
@@ -56,7 +55,6 @@ System.out.println("play");
 	}
     }
     public static void play(){
-	printInstructions();
 	while ((((WarAI)AI).hand.size() < 52) && (((WarUser)user).hand.size() < 52)){
 	    ((WarUser)user).move();
 	    ((WarAI) AI).move();
@@ -140,6 +138,10 @@ System.out.println("play");
 	    System.out.println("Your OPPONENT has emerged victorious from this WORLD WAR!");
 	    System.out.println("You have been BANISHED banished from the kingdom!");
 	}
+    }
+
+    public static void printRules() {
+	System.out.println("Each player turns up a card at the same time and the player with the higher card takes both cards and puts them, face down, on the bottom of his stack. If the cards are the same rank, it is War. Each player turns up one card face down and one card face up. The player with the higher cards takes both piles. At the end of the game, the person left with the entire deck wins!");
     }
 }
 	    

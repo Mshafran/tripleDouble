@@ -27,6 +27,7 @@ public class BlackjackUser extends Player{
     }
 
     public void move() {
+	BlackJack.printInstructions();
 	boolean turn = true;
 	passed = false;
 	System.out.println("This is currently your hand: " + getHand());
@@ -46,7 +47,7 @@ public class BlackjackUser extends Player{
 		BlackJack.players[0].passed = true;
 		turn = false;
 	    } else if (input.equals("help")) {
-		BlackJack.printInstructions();
+		BlackJack.printRules();
 	    } else {
 		System.out.println("Sorry, but what?");
 	    }

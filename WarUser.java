@@ -17,6 +17,7 @@ public void tie() {
 
     
     public void move() {
+	War.printInstructions();
 	System.out.println("This is how many cards YOU currently have: " + hand.size());
 	System.out.println("This is how many cards YOUR OPPONENT currently has: " + (52 - hand.size()));
 	boolean turn = true;
