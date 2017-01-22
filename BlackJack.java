@@ -24,6 +24,7 @@ public class BlackJack extends CardGame{
 	    reset();
 	    main(null);
 	} else if (response == 2 ){
+	    reset();
 	    Woo.main(null);
 	} else {
 	    System.out.println("I don't understand, so I'll ask again");
@@ -89,7 +90,6 @@ public class BlackJack extends CardGame{
 	}
     }
     public static void play(){
-	printInstructions();
 	while (deck.size()>0){
 	    ((BlackjackUser)players[0]).move();
 	    for (int i = 1; i < players.length; i++){
@@ -99,8 +99,8 @@ public class BlackJack extends CardGame{
 	    turns++;
 	    if (turns > 10){
 		System.out.println("10 turns have passed");
-		System.out.println(totalBlackJacks);
-		System.out.println(winners);
+		//System.out.println(totalBlackJacks);
+		//System.out.println(winners);
 		return;
 	    }
 	    allPassed = true;

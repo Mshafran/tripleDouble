@@ -1,28 +1,56 @@
 import java.util.ArrayList;
 import cs1.Keyboard;
 
-public class War extends CardGame {
+public class War extends CardGame {//war is a subclass of CardGame
     static int turns = 0;
     public static ArrayList<Player> winners = new ArrayList<Player>();
     
-    public static WarUser user;
+    public static WarUser user; // uses the user class
     public static WarAI AI;
     public static void main(String[] args){
-	printRules();
-	setup();
-	//print();
-	play();
-	finish();
-	//	System.out.println("You currently have $" + Woo.money + ".");
+	printRules();// prints the rules, defined in the printRules method
+	setup();//sets up the game
+	play();// controls the gameplay
+	finish(); // 
 	playAgain();
 	
 	
     }
+
+    //Step 1 of main method
+    
+    public static void printRules() { // prints rules
+	System.out.println("Each player turns up a card at the same time and the player with the higher card takes both cards and puts them, face down, on the bottom of his stack. If the cards are the same rank, it is War. Each player turns up one card face down and one card face up. The player with the higher cards takes both piles. At the end of the game, the person left with the entire deck wins!");
+    }
+
+    //Step 2 of main method
+    
+    public static void setup(){ // sets up the game
+	addCards(); // adds cards into the deck using the inherited method from CardGame
+	shuffleDeck(); // inherited method from CardGame, randomizes positions of cards in deck
+	makePlayers();// makes two players, one is a WarUser and the other is a WarAI
+	deal();// overwritten method from CardGame
+     }
+
+    public static void makePlayers(){ // makes two players: the AI and the User
+	System.out.println("This is a 2 player game");
+        user  = new WarUser();
+        AI = new WarAI();
+	System.out.println("\n\n\nPrepare For Battle, My Good Sir!\n\n");
+	return;
+    }
+
+    public static void deal(){ // deals
+	while (deck.size()>0){
+	    user.hand.add(deck.remove(0));
+	    AI.hand.add(deck.remove(0));
+	}
+    }
+    
     public static void playAgain(){
 	System.out.println("Do You Want To Give It Another Go?   \n1. Yea, I'm Game \n2. Nah, Let's Try Something Else");
 	int response = Keyboard.readInt();
 	if (response == 1) {
-	    turns = 0;
 	    winners = new ArrayList<Player>();
 	    main(null);
 	} else if (response == 2 ){
@@ -32,28 +60,12 @@ public class War extends CardGame {
 	    playAgain();
 	}
     }
-     public static void setup(){
-	addCards();
-	shuffleDeck();
-	makePlayers();
-	deal();
-     }
-    public static void makePlayers(){
-	System.out.println("This is a 2 player game");
-        user  = new WarUser();
-        AI = new WarAI();
-	System.out.println("\n\n\nPrepare For Battle, My Good Sir!\n\n");
-	return;
-	}
+
+
 
     
-    //deals two cards to each player initally
-    public static void deal(){
-        while (deck.size()>0){
-	    user.hand.add(deck.remove(0));
-	    AI.hand.add(deck.remove(0));
-	}
-    }
+    
+
     public static void play(){
 	while ((((WarAI)AI).hand.size() < 52) && (((WarUser)user).hand.size() < 52)){
 	    ((WarUser)user).move();
@@ -140,8 +152,6 @@ public class War extends CardGame {
 	}
     }
 
-    public static void printRules() {
-	System.out.println("Each player turns up a card at the same time and the player with the higher card takes both cards and puts them, face down, on the bottom of his stack. If the cards are the same rank, it is War. Each player turns up one card face down and one card face up. The player with the higher cards takes both piles. At the end of the game, the person left with the entire deck wins!");
-    }
+
 }
 	    
