@@ -9,31 +9,69 @@ Card Games: You don't need a poker face if you're playing in command line
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow we so BOSS bc...
+we so boss bc...
+
+Our main issues were with the War, Chase, and GoFish classes. In War, for some reason it would not run initially, and we solved this
+issue by declaring the players as instance variables. For Chase, the card comparison was whacky and would not work, and every round, new
+AI's were accidentally being added. We solved this by resetting the ArrayList with AI's after every game, and this seemed to solve the
+card comparison too (though we still aren't completely sure how). For GoFish, we would get an error every time someone would win because
+the losers were removed, but when there was only one player left, it would continuously look for other players, which was impossible. We
+solved this with a simple if statement.
+
+Furthermore, the biggest obstacles we had were the millions upon trillions of errors we would get after writing each class, but this
+also turned out to be the most rewarding because, more often than not, half of the errors would go away after adding or removing a
+single line or even a single word. 
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Making an Ace act as 1 or 11 by choice
-Possible pile splitting on inital doubles dealt
-
-
 blah blah pesky bug...
 maybe some of these will move into the Obs.Ovrcm section...
+
+(None of these issues are error-causing, they are just things we would include if we had more time)
+Our unresolved issues are not error-causing but are simply additional functions we would have included if we had more time to work on
+this. The first addition would be making an Ace act as 1 or 11 by choice in BlackJack. Furthermore, in BlackJack we would have wanted to
+include pile splitting on inital doubles dealt. Another thing we could have done is adding more "trump cards" in Crazy8s, which would
+make it slightly more dynamic and even more similar to Uno. In addition, the implementation of a 2 player mode for the games could also
+have been interesting. Finally, making the entire program run like a casino, with money accumulating, win streaks, and gambling would
+have added another aspect.
+
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 wow! oo!...
 
-Working on displaying suits in the terminal and windows prompt made us stumble on the huge amount of characters available 
+Working on displaying suits in the terminal and windows prompt made us stumble on the huge amount of characters available. We also
+learned that the characters that work for Linux don't work for Windows, and vice versa. Additionally, we were able to solidify our
+understanding of subclasses, superclasses, inheritance, etc.  
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 we changed ___ to ___ bc...
 
+There were two significant mid-development changes that we made: changing the games we would include and changing the hierarchy of the
+player classes.
+Initially, the games we wanted to include in our program were BlackJack, War, Nines, Durak, and Poker. However, we decided to change the
+games to BlackJack, War, CrazyEights, Chase the Ace, and Go Fish. The reason we changed Nines is because mid development, we realized
+that what we meant by Nines was actually called CrazyEights. We scrapped Durak because we realized that it did not look very good in the
+terminal and was too confusing. Finally, we chose not to do poker because there were way too many combinations and we realized how
+incredibly difficult poker would be to code, not even mentioning the AI for it. WE deemed Chase the Ace and Go Fish as perfect
+replacements for those two games, i.e. Durak and Poker.
+As for the hierarchy, mid-development we realized that it would be much easier to make the <Game>AI class a subclass of the <Game>Player
+class, and make the <Game>Player class equivalent to what we used to call the <Game>User class. However, we only realized that this
+would be more efficient very late in the development of our program. As a result, only 2 of the 5 games implement this class.
+
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 tales of wisdom gained...
 ||||||||||||||||||||||||||||||||||||||||||
+
+The main lesson we learned was how important a good team dynamic is. We worked incredibly well together and our skillsets complimented
+each other. Whenever we would encounter an issue, we would try to solve it, but we would also alert the other member to see if they
+could find it faster. Our coding styles are quite similar, which made it very easy to merge the codes and understand what each line does
+when troubleshooting. We were both readily accessible most of the time and would answer very shortly after the other person would send a
+message. This was a very drastic change for Mark especially, because in his past experiences with CS final projects, he did the majority
+of the work. However, in this case, the work was completely evenly split and there were never any interpersonal conflicts or
+disagreements or arguments.
 
 
 
@@ -50,59 +88,83 @@ tales of wisdom gained...
 2017-01-11
 --------------------------------------------------------------
 Ibnul :: <***This includes all code done before this date as well.***
-Added basic shell files for most of the classes we have discussed in class, and talked about on our diagrams. Made a class for a basic Player and for the computer BlackJack player, but not the User because the former was easier to test to see success. Made a basic CardGame class that can do things such as make and shuffle a deck, and made a basic BlackJack class that extends it and cycles through all the players and have them move. Made a Card class, but this will definitely require changes to fix the fact that J,Q, and K all equal 10. Lastly has a Woo that allows to User to start a game of BlackJack.>
-Mark :: replaced all of shell files with semi-functioning files, added a BlackjackUser class that allows the user to play as well, but did not implement it with the rest of the code
+Added basic shell files for most of the classes we have discussed in class, and talked about on our diagrams. Made a class for a basic
+Player and for the computer BlackJack player, but not the User because the former was easier to test to see success. Made a basic
+CardGame class that can do things such as make and shuffle a deck, and made a basic BlackJack class that extends it and cycles through
+all the players and have them move. Made a Card class, but this will definitely require changes to fix the fact that J,Q, and K all
+equal 10. Lastly has a Woo that allows to User to start a game of BlackJack.>
+Mark :: replaced all of shell files with semi-functioning files, added a BlackjackUser class that allows the user to play as well, but
+did not implement it with the rest of the code
 ==============================================================
 
 2017-01-12
 --------------------------------------------------------------
-Ibnul :: updated all of files, fixed issue with suits not showing in Linux, implemented BlackjackUser to work in conjunction with the rest of the code
+Ibnul :: updated all of files, fixed issue with suits not showing in Linux, implemented BlackjackUser to work in conjunction with the
+rest of the code
 Mark :: Updated flowchart and UML diagram with more precise and up-to-date information.
 ==============================================================
 
 2017-01-13
 --------------------------------------------------------------
-Ibnul :: Fixed error where program would wait for an input that was never going to arrive. Also fixed and simplified an inheritance algorithm.
+Ibnul :: Fixed error where program would wait for an input that was never going to arrive. Also fixed and simplified an inheritance
+algorithm.
 Mark :: Talked with Ibnul about the code that we were having trouble fixing and helped Ibnul reach the solutions.
 ==============================================================
 
 2017-01-15
 --------------------------------------------------------------
 Ibnul :: Set the value of all face cards to 10, and started to work on what the program should do when the game finished.
-Mark :: Provided a lot of ideas and edited code that Ibnul sent him manually that seemed to not work. Also updated the UML diagram and the flowchart. Started working on ways to code the next game in the sequence.
+Mark :: Provided a lot of ideas and edited code that Ibnul sent him manually that seemed to not work. Also updated the UML diagram and
+the flowchart. Started working on ways to code the next game in the sequence.
 ==============================================================
 
 2017-01-16
 --------------------------------------------------------------
 Ibnul :: Finished coding the endgame sequence and determined ways for the code to print and display the winners of the game.
-Mark :: Continued working on next game, and talked to Ibnul a lot about what would be the most simple and efficient ways for them to proceed
+Mark :: Continued working on next game, and talked to Ibnul a lot about what would be the most simple and efficient ways for them to
+proceed
 ==============================================================
 
 2017-01-17
 --------------------------------------------------------------
 Ibnul :: Started work on a Crazy8s game (what we actually meant by Nines in our game proposal)
-Mark :: Started work on the game War. Created essentially the entire game but it was giving me errors whenever i would try to run it. After 4 hours, I decided to call it quits and that I would discuss it with Ib in class the following day.
+Mark :: Started work on the game War. Created essentially the entire game but it was giving me errors whenever i would try to run it.
+After 4 hours, I decided to call it quits and that I would discuss it with Ib in class the following day.
 ==============================================================
 
 
 2017-01-18
 --------------------------------------------------------------
-Ibnul :: <Thing member did.>
-Mark :: In class, worked together with Ibnul to fix the War class, which was giving me errors previously. All we needed to do was make the AI and the User public static global variables instead of making them non-global. Also updated the README file, but will continue to update it even more as we make more additions to the project.
+Ibnul :: Finished the game play and the AI class for Crazy8s. It is fully functional except for that part that the User has no way to play it yet.
+Mark :: In class, worked together with Ibnul to fix the War class, which was giving me errors previously. All we needed to do was make
+the AI and the User public static global variables instead of making them non-global. Also updated the README file, but will continue to
+update it even more as we make more additions to the project.
 ==============================================================
 
 2017-01-19
 --------------------------------------------------------------
-Ibnul & Mark :: Worked together in class to fully implement the user class for Crazy8s. This signified the end of work on Crazy8s, as it was fully finished.
+Ibnul & Mark :: Worked together in class to fully implement the user class for Crazy8s. This signified the end of work on Crazy8s, as it
+was fully finished.
 ==============================================================
 
 2017-01-20
 --------------------------------------------------------------
-Ibnul & Mark:: In class, discussed the potential expansions we can make to our project before it is due. Concluded that we will be implementing a "Chase the Ace" game, as well as a "Go Fish" game. We also showcased our project to our class visitor, and decided that we would like to present our project on Monday, being the brave and bold souls we are.
+Ibnul & Mark:: In class, discussed the potential expansions we can make to our project before it is due. Concluded that we will be
+implementing a "Chase the Ace" game, as well as a "Go Fish" game. We also showcased our project to our class visitor, and decided that
+we would like to present our project on Monday, being the brave and bold souls we are.
 ==============================================================
 
 2017-01-21
 --------------------------------------------------------------
-Ibnul :: <Thing member did.>
-Mark :: Wrote the entire Chase the Ace game from start to finish. It is currently fully functional. Updated README file, updated devlog.
+Ibnul :: Started working on a Go Fish game. Did not commit, however, because I did not want to mess up our repository with only semi-working code.
+Mark :: Wrote the entire Chase the Ace game from start to finish. It is currently fully functional. Updated devlog.
+==============================================================
+
+
+2017-01-22
+--------------------------------------------------------------
+Ibnul :: Finished all of Go Fish, including the User class, AI class, and gameplay. Added comments for it, and went on to check the other games for any small bugs and errors. (Specifically with card comparison in War and with players without cards in Go Fish in the end sequence)
+Mark :: Added descriptive comments to all of the classes. Fixed random issues with all of the classes. Updated devlog intro description,
+updated README file
+Ibnul & Mark:: Worked on the UML diagram and Flowchart
 ==============================================================
