@@ -53,7 +53,7 @@ public class Crazy8Player extends Player{
 	}
 	
 	System.out.println("Which card would you like to play?"); 
-	System.out.println("Type 'options' if you want to see all the possibilities \nType 'draw' if you want to pick up a card"); // instructions
+	System.out.println("Type 'options' if you want to see all the possibilities \nType 'draw' if you want to pick up a card\nType 'forfeit' if you want to quit the game"); // instructions
 	cardIndex = Keyboard.readString();
 	Card playCardInit = playCard;
 	if (cardIndex.equals("options")){ // if user wants to see all options
@@ -65,6 +65,11 @@ public class Crazy8Player extends Player{
 	    redoDeck(); // redoes deck
 	    askCard(); // asks again
 	    return;
+	}
+	else if (cardIndex.equals("forfeit")){ // if user wants to forfeit
+	    Crazy8s.reset(); // resets deck
+	    Woo.main(null); // goes back to Woo
+	    
 	}
 	try{
 	    if (Integer.parseInt(cardIndex) < 0 || Integer.parseInt(cardIndex) >= hand.size()){// if number is too large or too small

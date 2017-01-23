@@ -54,7 +54,7 @@ public class GoFish extends CardGame{
 	}
     }
 
-    //starts the gamw
+    //starts the game
     public static void play(){
 	boolean emptyHand = false;
 	while (!emptyHand || deck.size() == 0){
