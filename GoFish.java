@@ -63,6 +63,9 @@ public class GoFish extends CardGame{
     public static void play(){
 	boolean emptyHand = false;
 	while (!emptyHand || deck.size() == 0){
+	    if (totalDoubles() == 26){
+		break;
+	    }
 	    //print();
 	    //System.out.println("\n");
 	    checkAllDoubles();
@@ -70,6 +73,9 @@ public class GoFish extends CardGame{
 	    //the user goes if he has cards
 	    if (players[0].hand.size() > 0 ){
 		((GoFishPlayer)players[0]).move();
+		if (totalDoubles() == 26){
+		    break;
+		}
 	    }
 	    System.out.println("\nEND OF YOUR TURN\nBEGINNING OF AI TURNS\n");
 	    //all the AIs turns
@@ -79,6 +85,9 @@ public class GoFish extends CardGame{
 		System.out.println("\n");
 		printAllDoubles();
 		System.out.println("\n");
+		if (totalDoubles() == 26){
+		    break;
+		}
 	    }
 	    System.out.println("Everyone has moved once\n");
 	    //When the deck is empty, so all remaining cards are in players hands
@@ -92,6 +101,7 @@ public class GoFish extends CardGame{
 		}
 	    }
 	}
+	System.out.println("All cards are paired up:\n\t\t The game is over\n\n\n");
 	int mostDoubles =0;
 	for (int i = 0; i <players.length; i++){
 	    if (((GoFishPlayer)players[i]).doubles.size() > mostDoubles) {
@@ -128,6 +138,14 @@ public class GoFish extends CardGame{
 	    ((GoFishPlayer)players[i]).printDoubles();
 	}
 	
+    }
+
+    public static int totalDoubles(){
+	int rtn = 0;
+	for (int i = 0; i < players.length; i++){
+	    rtn += ((GoFishPlayer)players[i]).doubles.size();
+	}
+	return rtn;
     }
 
     //if the user wants to play again
