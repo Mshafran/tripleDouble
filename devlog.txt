@@ -9,31 +9,41 @@ Card Games: You don't need a poker face if you're playing in command line
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow we so BOSS bc...
+we so boss bc...
+
+Our main issues were with the War, Chase, and GoFish classes. In War, for some reason it would not run initially, and we solved this issue by declaring the players as instance variables. For Chase, the card comparison was whacky and would not work, and every round, new AI's were accidentally being added. We solved this by resetting the ArrayList with AI's after every game, and this seemed to solve the card comparison too (though we still aren't completely sure how). For GoFish, we would get an error every time someone would win because the losers were removed, but when there was only one player left, it would continuously look for other players, which was impossible. We solved this with a simple if statement.
+
+Furthermore, the biggest obstacles we had were the millions upon trillions of errors we would get after writing each class, but this also turned out to be the most rewarding because, more often than not, half of the errors would go away after adding or removing a single line or even a single word. 
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Making an Ace act as 1 or 11 by choice
-Possible pile splitting on inital doubles dealt
-
-
 blah blah pesky bug...
 maybe some of these will move into the Obs.Ovrcm section...
+
+(None of these issues are error-causing, they are just things we would include if we had more time)
+Our unresolved issues are not error-causing but are simply additional functions we would have included if we had more time to work on this. The first addition would be making an Ace act as 1 or 11 by choice in BlackJack. Furthermore, in BlackJack we would have wanted to include pile splitting on inital doubles dealt. Another thing we could have done is adding more "trump cards" in Crazy8s, which would make it slightly more dynamic and even more similar to Uno. In addition, the implementation of a 2 player mode for the games could also have been interesting. Finally, making the entire program run like a casino, with money accumulating, win streaks, and gambling would have added another aspect.
+
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 wow! oo!...
 
-Working on displaying suits in the terminal and windows prompt made us stumble on the huge amount of characters available 
+Working on displaying suits in the terminal and windows prompt made us stumble on the huge amount of characters available. We also learned that the characters that work for Linux don't work for Windows, and vice versa. Additionally, we were able to solidify our understanding of subclasses, superclasses, inheritance, etc.  
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 we changed ___ to ___ bc...
 
+There were two significant mid-development changes that we made: changing the games we would include and changing the hierarchy of the player classes.
+Initially, the games we wanted to include in our program were BlackJack, War, Nines, Durak, and Poker. However, we decided to change the games to BlackJack, War, CrazyEights, Chase the Ace, and Go Fish. The reason we changed Nines is because mid development, we realized that what we meant by Nines was actually called CrazyEights. We scrapped Durak because we realized that it did not look very good in the terminal and was too confusing. Finally, we chose not to do poker because there were way too many combinations and we realized how incredibly difficult poker would be to code, not even mentioning the AI for it. WE deemed Chase the Ace and Go Fish as perfect replacements for those two games, i.e. Durak and Poker.
+As for the hierarchy, mid-development we realized that it would be much easier to make the <Game>AI class a subclass of the <Game>Player class, and make the <Game>Player class equivalent to what we used to call the <Game>User class. However, we only realized that this would be more efficient very late in the development of our program. As a result, only 2 of the 5 games implement this class.
+
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 tales of wisdom gained...
 ||||||||||||||||||||||||||||||||||||||||||
+
+The main lesson we learned was how important a good team dynamic is. We worked incredibly well together and our skillsets complimented each other. Whenever we would encounter an issue, we would try to solve it, but we would also alert the other member to see if they could find it faster. Our coding styles are quite similar, which made it very easy to merge the codes and understand what each line does when troubleshooting. We were both readily accessible most of the time and would answer very shortly after the other person would send a message. This was a very drastic change for Mark especially, because in his past experiences with CS final projects, he did the majority of the work. However, in this case, the work was completely evenly split and there were never any interpersonal conflicts or disagreements or arguments.
 
 
 
@@ -104,5 +114,13 @@ Ibnul & Mark:: In class, discussed the potential expansions we can make to our p
 2017-01-21
 --------------------------------------------------------------
 Ibnul :: <Thing member did.>
-Mark :: Wrote the entire Chase the Ace game from start to finish. It is currently fully functional. Updated README file, updated devlog.
+Mark :: Wrote the entire Chase the Ace game from start to finish. It is currently fully functional. Updated devlog.
+==============================================================
+
+
+2017-01-22
+--------------------------------------------------------------
+Ibnul :: <Thing member did.>
+Mark :: Added descriptive comments to all of the classes. Fixed random issues with all of the classes. Updated devlog intro description, updated README file
+Ibnul & Mark:: Worked on the UML diagram and Flowchart
 ==============================================================
