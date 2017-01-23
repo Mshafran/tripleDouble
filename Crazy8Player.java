@@ -38,6 +38,7 @@ public class Crazy8Player extends Player{
 	System.out.println();
 	if (findMatches().size() == 0) { // if there are no possibly playable cards
 	    System.out.println("You have to draw a card\n1. Draw");
+	    System.out.print("Pick the Number: ");
 	    int draw = Keyboard.readInt();
 	    if (draw == 1){
 		drawCard();// draws a Card
@@ -54,6 +55,7 @@ public class Crazy8Player extends Player{
 	
 	System.out.println("Which card would you like to play?"); 
 	System.out.println("Type 'options' if you want to see all the possibilities \nType 'draw' if you want to pick up a card\nType 'forfeit' if you want to quit the game"); // instructions
+	System.out.print("Type your choice: ");
 	cardIndex = Keyboard.readString();
 	System.out.println("\n");
 	Card playCardInit = playCard;

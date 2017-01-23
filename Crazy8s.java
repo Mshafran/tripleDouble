@@ -19,7 +19,7 @@ public class Crazy8s extends CardGame{
     //---------------------------Step 1 of main method--------------------------------------
 
     public static void printRules() { //prints out rules
-	System.out.println("Eight cards are dealt to each player. The remaining cards of the deck are placed face down at the center of the table. The top card is then turned face up to start the game.Players discard by matching rank or suit with the top card of the discard pile, starting with the player left of the dealer. If a player is unable to match the rank or suit of the top card of the discard pile and does not have an eight, they draw cards from the stockpile until getting a playable card. When a player plays an eight, they must declare the suit that the next player is to play; that player must then follow the named suit or play another eight.The game ends as soon as one player has emptied their hand.");
+	System.out.println("Eight cards are dealt to each player. The remaining cards of the deck are placed face down at the center of the table. The top card is then turned face up to start the game.Players discard by matching rank or suit with the top card of the discard pile, starting with the player left of the dealer. If a player is unable to match the rank or suit of the top card of the discard pile and does not have an eight, they draw cards from the stockpile until getting a playable card. When a player plays an eight, they must declare the suit that the next player is to play; that player must then follow the named suit or play another eight.The game ends as soon as one player has emptied their hand.\n\n");
     }
 
     //--------------------------------------------------------------------------------------
@@ -38,6 +38,7 @@ public class Crazy8s extends CardGame{
     
     public static void makePlayers(){ //makes players
 	System.out.println("How many players?");
+	System.out.print("Pick a Number: ");
 	int numPlayers = Keyboard.readInt();// reads how many players the user wants
 	if (numPlayers > 7 || numPlayers < 2){ // if there are too many or too few players
 	    System.out.println("Try a reasonable amount");
@@ -122,6 +123,7 @@ public class Crazy8s extends CardGame{
 
     public static void playAgain(){ // checks if user wants to play again
 	System.out.println("Do You Want To Give It Another Go?   \n1. Yea, I'm Game \n2. Nah, Let's Try Something Else");
+	System.out.print("Pick a Number: ");
 	int response = Keyboard.readInt();
 	if (response == 1) { // if user wants to play again
 	    reset(); // resets

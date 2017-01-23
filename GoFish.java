@@ -17,7 +17,7 @@ public class GoFish extends CardGame{
     }
     //basic rules
     public static void printRules() {
-		System.out.println("Go Fish is a classic card game for kids. The concept behind this game is simple. The dealer will deal each player five or seven cards face down and place the remaining cards in the center of the table. The first player will choose one of their cards and a player, and ask them 'Do you have any X'. The player will then respond with either a yes, and give that player the card they asked for, or with a no and say 'go fish'. If the player responds with a 'go fish', you need to pick up one card from the pile. If the pick-up card matches the card you asked for, you can remove both cards from your hand and place them face down. The object of the game is to match all of the cards in your hand. The player who runs out of cards is the winner. If you asked for a certain card and the player gives it to you, you get to go again. You can also play where only full sets count, so instead of getting two of a kind you have to get four of a kind.");
+		System.out.println("Go Fish is a classic card game for kids. The concept behind this game is simple. The dealer will deal each player five or seven cards face down and place the remaining cards in the center of the table. The first player will choose one of their cards and a player, and ask them 'Do you have any X'. The player will then respond with either a yes, and give that player the card they asked for, or with a no and say 'go fish'. If the player responds with a 'go fish', you need to pick up one card from the pile. If the pick-up card matches the card you asked for, you can remove both cards from your hand and place them face down. The object of the game is to match all of the cards in your hand. The player who runs out of cards is the winner. If you asked for a certain card and the player gives it to you, you get to go again. You can also play where only full sets count, so instead of getting two of a kind you have to get four of a kind.\n\n");
     }
 
     //basic setup (makes a deck, shuffles it, makes the players, and deals out the 
@@ -42,6 +42,7 @@ public class GoFish extends CardGame{
     //makes the players according to how many the user specifies
     public static void makePlayers(){
 	System.out.println("How many players? (up to 6)");
+	System.out.print("Pick a Number: ");
 	int numPlayers = Keyboard.readInt();
 	if (numPlayers > 6 || numPlayers < 2){
 	    System.out.println("Try a reasonable amount");
@@ -151,6 +152,7 @@ public class GoFish extends CardGame{
     //if the user wants to play again
     public static void playAgain(){
 	System.out.println("Do You Want To Give It Another Go?   \n1. Yea, I'm Game \n2. Nah, Let's Try Something Else");
+	System.out.print("Pick a Number: ");
 	int response = Keyboard.readInt();
 	if (response == 1) {
 	    reset();

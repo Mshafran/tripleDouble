@@ -22,6 +22,7 @@ public class Chase extends CardGame {
 
     public static void playAgain(){
 	System.out.println("Do You Want To Give It Another Go?   \n1. Yea, I'm Game \n2. Nah, Let's Try Something Else");
+	System.out.print("Pick a Number: ");
 	int response = Keyboard.readInt();
 	if (response == 1) {
 	    turns = 0;
@@ -43,6 +44,7 @@ public class Chase extends CardGame {
      }
     public static void makePlayers(){
 	System.out.println("How many players do you want? (Between 3 and 10, inclusive!)");
+	System.out.print("Pick a Number: ");
 	int resp = Keyboard.readInt();
 	if (resp < 3) {
 	    System.out.println("Please choose at least 3 players");
@@ -54,6 +56,7 @@ public class Chase extends CardGame {
 	}
 	else {
 	    System.out.println("How many lives do you want each player to have?");
+	    System.out.print("Pick a Number: ");
 	    int res = Keyboard.readInt();
 	    if (res < 1) {
 		System.out.println("You can't have less than 1 life!");
@@ -201,7 +204,7 @@ public class Chase extends CardGame {
     }
 	
     public static void printRules() {
-		System.out.println("Chase the Ace is played with a deck of 52 playing cards and at least 3 people. To begin, the dealer will deal each player one card and one card only. The cards must remain face down, however the players can look at the cards. The object of the game is to not have the lowest card. Once the deal has finished, players will then look at their cards and choose whether they will pass their card to the player on their left or hold onto the card. The ranks go from 1 - A, which means if youre holding a card with the face value of 10 or higher, you will want to hold on to it. If youre holding a low ranked card, you would want to switch with the person to the left of you. The person to the left of the dealer starts and can either switch with the person to left of them or they can discard their card and draw a new one.  If a player has an Ace, that player gets to hold on to their card regardless of what the other players want to do. The people with the highest card at the end of the round win. In this game, you usually give the player x number of lives, since it is a very fast game to play and when someone loses all their lives, they are out");
+		System.out.println("Chase the Ace is played with a deck of 52 playing cards and at least 3 people. To begin, the dealer will deal each player one card and one card only. The cards must remain face down, however the players can look at the cards. The object of the game is to not have the lowest card. Once the deal has finished, players will then look at their cards and choose whether they will pass their card to the player on their left or hold onto the card. The ranks go from 1 - A, which means if youre holding a card with the face value of 10 or higher, you will want to hold on to it. If youre holding a low ranked card, you would want to switch with the person to the left of you. The person to the left of the dealer starts and can either switch with the person to left of them or they can discard their card and draw a new one.  If a player has an Ace, that player gets to hold on to their card regardless of what the other players want to do. The people with the highest card at the end of the round win. In this game, you usually give the player x number of lives, since it is a very fast game to play and when someone loses all their lives, they are out\n\n");
     }
 	
 

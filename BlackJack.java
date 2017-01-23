@@ -23,7 +23,7 @@ public class BlackJack extends CardGame{
 
 
         public static void printRules() {
-		System.out.println("In Blackjack, everyone is dealt out 2 cards, and the goal is to have your hand add up to 21. All number cards are worth their number value. Jacks, Queens, Kings are all worth 10. The Ace is worth 1. Every turn, you can either pass or hit. If you pass, that means you are satisfied with your hand, and it is as close to 21 as you think is possible. If you hit, you are dealt one more card. If your hand is over 21, you automatically lose. The people with the hand whose sum is the closest to 21 win.");
+		System.out.println("In Blackjack, everyone is dealt out 2 cards, and the goal is to have your hand add up to 21. All number cards are worth their number value. Jacks, Queens, Kings are all worth 10. The Ace is worth 1. Every turn, you can either pass or hit. If you pass, that means you are satisfied with your hand, and it is as close to 21 as you think is possible. If you hit, you are dealt one more card. If your hand is over 21, you automatically lose. The people with the hand whose sum is the closest to 21 win.\n\n");
     }
 
     //--------------------------------------------------------------------------------------
@@ -43,11 +43,12 @@ public class BlackJack extends CardGame{
      }
     public static void makePlayers(){ // makes players
 	System.out.println("How many players?");
+	System.out.print("Pick a Number: ");
 	int numPlayers = Keyboard.readInt();
 	if (numPlayers > 40 || numPlayers < 1){ // if not between 1 and 40 players
 	    System.out.println("Try a reasonable amount");
 	    makePlayers();
-	    System.out.println("skrt");
+	    //System.out.println("skrt");
 	    return;
 	} else { //if between 1 and 40 players
 	    players = new Player[numPlayers];//array of players
@@ -164,6 +165,7 @@ public class BlackJack extends CardGame{
 
     public static void playAgain(){
 	System.out.println("Do You Want To Give It Another Go?   \n1. Yea, I'm Game \n2. Nah, Let's Try Something Else");
+	System.out.print("Pick a Number: ");
 	int response = Keyboard.readInt();
 	if (response == 1) { // if user wants to play again
 	    reset(); // resets game

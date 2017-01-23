@@ -32,6 +32,7 @@ public class BlackjackUser extends Player{
 	passed = false; // has not passed yet
 	System.out.println("This is currently your hand: " + getHand());
 	while ((turn == true) && (handSum <= 21)) {
+	    System.out.print("What will you do?: ");
 	    String input = Keyboard.readWord();
 	    if (input.equals("hit")) { // if user wants to hit
 		hitme(); // hit

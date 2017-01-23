@@ -17,6 +17,7 @@ public class ChaseUser extends Player{
 	Chase.printInstructions();
 	boolean turn = true;
 	while ((turn == true) && (lives > 0)) {
+	    System.out.print("What will you do?: ");
 	    String input = Keyboard.readWord();
 	    if (input.equals("trade")) {
 	        this.trade = true;

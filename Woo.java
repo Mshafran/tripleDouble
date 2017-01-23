@@ -6,9 +6,10 @@ public class Woo {
     public static void main(String[] args){
 	
 	
-	System.out.println("ARE YOU READY...\n\t\tTO PLAY SOME CARDS?");
+	System.out.println("ARE YOU READY...\n\t\tTO PLAY SOME CARDS?\n");
 	System.out.println("What game do you want to play?");
 	System.out.println("1. BlackJack \n2. War \n3. Crazy8s \n4. Chase the Ace \n5. GoFish");
+	System.out.print("Pick a Number: ");
 	int response = Keyboard.readInt();
 	if (response == 1){
 	    BlackJack.main(args);
