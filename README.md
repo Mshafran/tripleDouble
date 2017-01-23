@@ -7,12 +7,29 @@ Our dynamic duo wishes to propose a collection of card games for the command pro
 
 ### How To Run:
 
-1)Clone into the tripleDouble repo
+1)Clone the tripleDouble repository: ```https://github.com/Mshafran/tripleDouble.git``` OR ```git@github.com:Mshafran/tripleDouble.git```
 
-2)Navigate to the tripleDouble directory in commandline
+2)Navigate to the tripleDouble directory in commandline:  ```cd tripleDouble```
 
-3)Once in the tripleDouble directory, type in "javac Woo.java"
+3)Once there, compile the project: ```javac Woo.java```
 
-4)Type in "java Woo"
+4)Prep yourself emotionally
 
-5)Play card games to your heart's content. Remember: You don't need a poker face if you're playing in command line!
+5)Run the program ```java Woo```
+
+6)Play card games to your heart's content. Remember: You don't need a poker face if you're playing in command line!
+
+
+
+### Further Instructions
+
+If you wish to learn more about these card games, look no further!!
+Below you will find links to further knowledge to be learned
+
+[BlackJack](https://en.wikipedia.org/wiki/Blackjack)
+[War](https://en.wikipedia.org/wiki/War_(card_game))
+[Crazy8s](https://en.wikipedia.org/wiki/Crazy_Eights)
+[ChaseTheAce](http://www.classicgamesandpuzzles.com/Chase-the-Ace.html)
+[GoFish](https://en.wikipedia.org/wiki/Go_Fish)
+
+... and also to learn about even more great card games, look [here](http://www.bicyclecards.com/rules/)!
