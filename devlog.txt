@@ -135,7 +135,7 @@ After 4 hours, I decided to call it quits and that I would discuss it with Ib in
 
 2017-01-18
 --------------------------------------------------------------
-Ibnul :: <Thing member did.>
+Ibnul :: Finished the game play and the AI class for Crazy8s. It is fully functional except for that part that the User has no way to play it yet.
 Mark :: In class, worked together with Ibnul to fix the War class, which was giving me errors previously. All we needed to do was make
 the AI and the User public static global variables instead of making them non-global. Also updated the README file, but will continue to
 update it even more as we make more additions to the project.
@@ -156,14 +156,14 @@ we would like to present our project on Monday, being the brave and bold souls w
 
 2017-01-21
 --------------------------------------------------------------
-Ibnul :: <Thing member did.>
+Ibnul :: Started working on a Go Fish game. Did not commit, however, because I did not want to mess up our repository with only semi-working code.
 Mark :: Wrote the entire Chase the Ace game from start to finish. It is currently fully functional. Updated devlog.
 ==============================================================
 
 
 2017-01-22
 --------------------------------------------------------------
-Ibnul :: <Thing member did.>
+Ibnul :: Finished all of Go Fish, including the User class, AI class, and gameplay. Added comments for it, and went on to check the other games for any small bugs and errors. (Specifically with card comparison in War and with players without cards in Go Fish in the end sequence)
 Mark :: Added descriptive comments to all of the classes. Fixed random issues with all of the classes. Updated devlog intro description,
 updated README file
 Ibnul & Mark:: Worked on the UML diagram and Flowchart
