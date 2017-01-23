@@ -12,7 +12,9 @@ public class GoFishAI extends GoFishPlayer{
 	int askPlayer = randomPlayer();
 	//set cardIndex to random card that the AI has
 	int cardIndex = (int)(Math.random()*hand.size());
-	askForCard(askPlayer, cardIndex);
+	if (hand.size() > 0) {
+	    askForCard(askPlayer, cardIndex);
+	}
 	checkDoubles();
 	restockCards();
 	
@@ -24,7 +26,7 @@ public class GoFishAI extends GoFishPlayer{
 	if (rtn == player) {
 	    return randomPlayer();  
 	} else if (GoFish.players[rtn].hand.size() == 0){
-	    return player;
+	    return randomPlayer();
 	} else {
 	    return rtn;
 	}	

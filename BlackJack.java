@@ -95,7 +95,7 @@ public class BlackJack extends CardGame{
 	    }
 	    allPassed = true;
 	    for (int i = 0; i < players.length; i ++){ 
-		System.out.println(CardGame.players[i].passed);
+		//System.out.println(CardGame.players[i].passed);
 		if (!CardGame.players[i].passed){ // if a player didn't pass
 		    System.out.println("Player "+i+" hit"); 
 		    allPassed = false;

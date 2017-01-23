@@ -36,7 +36,12 @@ public class GoFishPlayer extends Player{
 	System.out.println("Which card of yours would you like to ask for? (input the integer corresponding to the card in your hand)\nIf you wish to forfeit, type in '-1'");
 	int cardIndex = Keyboard.readInt();
 	if (cardIndex == -1) {GoFish.reset(); Woo.main(null);}
-	askForCard(askPlayer, cardIndex);
+	System.out.println("before asking");
+	if (hand.size() > 0){
+	    System.out.println(player +"has cards");
+	    askForCard(askPlayer, cardIndex);
+	}
+	System.out.println("after asking");
 	checkDoubles();
         restockCards();
     }
