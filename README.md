@@ -25,7 +25,7 @@ Our dynamic duo wishes to propose a collection of card games for the command pro
 ### Further Instructions
 
 If you wish to learn more about these card games, look no further!!
-Below you will find links to further knowledge to be learned
+Below you will find links to further knowledge to be obtained
 
 [BlackJack](https://en.wikipedia.org/wiki/Blackjack)
 
