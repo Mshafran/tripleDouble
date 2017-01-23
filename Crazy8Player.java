@@ -16,9 +16,9 @@ public class Crazy8Player extends Player{
 	askCard(); // asks the user to input a card to play
 	//checkCard();
         //findMatches();
-	System.out.println("findMatches");
+	//System.out.println("findMatches");
         //chooseCard();
-	System.out.println("chooseCard");
+	//System.out.println("chooseCard");
 	playCard();
     }   
     
@@ -55,9 +55,11 @@ public class Crazy8Player extends Player{
 	System.out.println("Which card would you like to play?"); 
 	System.out.println("Type 'options' if you want to see all the possibilities \nType 'draw' if you want to pick up a card\nType 'forfeit' if you want to quit the game"); // instructions
 	cardIndex = Keyboard.readString();
+	System.out.println("\n");
 	Card playCardInit = playCard;
 	if (cardIndex.equals("options")){ // if user wants to see all options
 	    System.out.println("Here are all the cards you can play: " + findMatches()); // tells the user all cards they can play
+	    System.out.println();
 	    askCard(); // asks again
 	    return;
 	} else if (cardIndex.equals("draw")){ // if user wants to draw

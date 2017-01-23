@@ -93,16 +93,17 @@ public class Crazy8s extends CardGame{
 	while (!emptyHand){ // as long as no one has an empty 
 	    //print();
 	    System.out.println("\n\n\n");
+	    System.out.println("There are " + deck.size() + " cards in the deck.");
 	    ((Crazy8Player)players[0]).move(); // the user moves
 	    System.out.println("\n\n\n");
 	    for (int i = 1; i < players.length; i++){ // goes through the array of AIs
 		((Crazy8AI)players[i]).move(); // each AI moves
 		//System.out.println("Player " + i + ": " + players[i].hand);
-		System.out.println("\n\n");
+		//System.out.println("\n\n");
 		//print();
 		System.out.println("\n\n");
 	    }
-	    System.out.println("\n\nEveryone has moved once\n\n");
+	    System.out.println("Everyone has moved once\n\n");
 
 	    for (Player player: players){ // to check if any player has won
 		if (player.hand.size() == 0) { // a player does not have any cards

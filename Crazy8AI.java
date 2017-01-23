@@ -61,6 +61,7 @@ public class Crazy8AI extends Crazy8Player{//subclass of Crazy8Player
 	hand.add(Crazy8s.deck.remove(0)); // moves from deck to hand
     }
     public void playCard(){ // plays card
+	System.out.println("Player " + player + " played a " + playCard);
 	Crazy8s.pile.add(0,hand.remove(hand.indexOf(playCard)));// moves playCard from hand to pile
     }
     public void redoDeck(){ // redoes deck
