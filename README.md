@@ -27,9 +27,13 @@ If you wish to learn more about these card games, look no further!!
 Below you will find links to further knowledge to be learned
 
 [BlackJack](https://en.wikipedia.org/wiki/Blackjack)
+
 [War](https://en.wikipedia.org/wiki/War_(card_game))
+
 [Crazy8s](https://en.wikipedia.org/wiki/Crazy_Eights)
+
 [ChaseTheAce](http://www.classicgamesandpuzzles.com/Chase-the-Ace.html)
+
 [GoFish](https://en.wikipedia.org/wiki/Go_Fish)
 
 ... and also to learn about even more great card games, look [here](http://www.bicyclecards.com/rules/)!
