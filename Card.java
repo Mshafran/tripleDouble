@@ -11,8 +11,7 @@ public class Card{ // card Class
 	suit = Suit; // suit is Suit
 	if (Val == 1) { // if card is an Ace
 	    ChaseVal = 100;
-	}
-	if (Val == 11){ // if card is a Jack
+	} else if (Val == 11){ // if card is a Jack
 	    BJval = 10;
 	    ChaseVal = 20;
 	} else if (Val == 12) {// if card is a Queen

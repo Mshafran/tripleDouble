@@ -9,10 +9,15 @@ public class GoFish extends CardGame{
     //public static boolean allPassed;
 
     public static void main( String[] args){
+	printRules();
 	setup();
 	System.out.println("finished setup");
 	play();
 	playAgain();
+    }
+    //basic rules
+    public static void printRules() {
+		System.out.println("Go Fish is a classic card game for kids. The concept behind this game is simple. The dealer will deal each player five or seven cards face down and place the remaining cards in the center of the table. The first player will choose one of their cards and a player, and ask them 'Do you have any X'. The player will then respond with either a yes, and give that player the card they asked for, or with a no and say 'go fish'. If the player responds with a 'go fish', you need to pick up one card from the pile. If the pick-up card matches the card you asked for, you can remove both cards from your hand and place them face down. The object of the game is to match all of the cards in your hand. The player who runs out of cards is the winner. If you asked for a certain card and the player gives it to you, you get to go again. You can also play where only full sets count, so instead of getting two of a kind you have to get four of a kind.");
     }
 
     //basic setup (makes a deck, shuffles it, makes the players, and deals out the 

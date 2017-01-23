@@ -25,6 +25,7 @@ public class Chase extends CardGame {
 	int response = Keyboard.readInt();
 	if (response == 1) {
 	    turns = 0;
+	    ais = new ArrayList<ChaseAI>();
 	    winners = new ArrayList<Player>();
 	    main(null);
 	} else if (response == 2 ){
@@ -60,8 +61,8 @@ public class Chase extends CardGame {
 	    }
 	    else {
 	        user = new ChaseUser(res);
-		for (int x = 0; x  < resp; x++){
-		    System.out.println("asd;fja");
+		for (int x = 0; x  < resp - 1; x++){
+		    //System.out.println("asd;fja");
 		    ais.add(new ChaseAI(x, res));
 		}
 	    }
@@ -71,7 +72,7 @@ public class Chase extends CardGame {
     }
 
     
-    //deals two cards to each player initally
+    //deals one cards to each player initally
     public static void deal(){
 	user.hand.add(deck.remove(0));
 	for (int x = 0; x < ais.size(); x++) {
@@ -123,6 +124,12 @@ public class Chase extends CardGame {
 		}
 	    }
 	    if (user.lives > 0) {System.out.println("Your card at the end of the round is " + user.hand.get(0));}
+	    //System.out.println("asi.size() = " + ais.size());
+	    for (int i = 0; i < ais.size(); i++){
+		if (ais.get(i).lives > 0 ){
+		    System.out.println("Player " + ais.get(i).player + "'s card is " +ais.get(i).hand.get(0));
+		}
+	    }
 	    winners();
 	    reDeal();
 	    if (playersLeft() == 1) {
@@ -135,14 +142,18 @@ public class Chase extends CardGame {
 
     public static void winners() {
 	int maxCard = 0;
+	int aiCard = 0;
 	for (int x = 0; x < ais.size() ; x++) {
 	    if (ais.get(x).lives > 0) {
-		int aiCard = ais.get(0).hand.get(0).ChaseVal;
+		aiCard = ais.get(x).hand.get(0).ChaseVal;
+		///System.out.println("AICARD = " + aiCard);
 		if (aiCard > maxCard) {
 		    maxCard = aiCard;
+		    //System.out.println("maxCArd = "+ maxCard);
 		}
 	    }
 	}
+	//System.out.println(maxCard);
 	if ((user.lives > 0) && (maxCard < user.hand.get(0).ChaseVal)) {
 	    maxCard = user.hand.get(0).ChaseVal;
 	}
@@ -158,7 +169,9 @@ public class Chase extends CardGame {
 		if (x.hand.get(0).ChaseVal < maxCard) {
 		    x.lives -= 1;
 		}
-		else if (x.hand.get(0).ChaseVal == maxCard) {System.out.println("AI" + x.player + " won this round with the " + x.hand.get(0));}
+		else if (x.hand.get(0).ChaseVal == maxCard){
+		    System.out.println("AI" + x.player + " won this round with the " + x.hand.get(0));
+		}
 	    }
 	}
 
