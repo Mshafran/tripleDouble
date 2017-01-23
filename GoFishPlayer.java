@@ -26,10 +26,16 @@ public class GoFishPlayer extends Player{
 	}
 	System.out.println();
 	//Finds out which player to ask and which card to ask for
-	System.out.println("Which Player would you like to ask for a card? (input an integer) ");
+	System.out.println("Which Player would you like to ask for a card? (input an integer) \nIf you wish to forfeit, type in '-1' ");
 	int askPlayer = Keyboard.readInt();
-	System.out.println("Which card of yours would you like to ask for? (input the integer corresponding to the card in your hand)");
+	if (askPlayer == -1) {GoFish.reset(); Woo.main(null);}
+	if (askPlayer == 0) {
+	    System.out.println("You cannot ask yourself for a card!");
+	    move();
+	}
+	System.out.println("Which card of yours would you like to ask for? (input the integer corresponding to the card in your hand)\nIf you wish to forfeit, type in '-1'");
 	int cardIndex = Keyboard.readInt();
+	if (cardIndex == -1) {GoFish.reset(); Woo.main(null);}
 	askForCard(askPlayer, cardIndex);
 	checkDoubles();
         restockCards();
