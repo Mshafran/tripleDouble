@@ -10,6 +10,7 @@ public class WarUser extends Player{
 	System.out.println("This is how many cards YOUR OPPONENT currently has: " + (52 - hand.size())); // prints out how many cards the AI has
 	boolean turn = true;
 	while ((turn == true) && (hand.size() < 52) && (hand.size() > 0)) {// runs while it is still the users turn AND the user has not won or lost yet
+	    System.out.print("What will you do?: ");
 	    String input = Keyboard.readWord();// what the user typed in
 	    if (input.equals("go")) { // if user typed in go
 	        putCard(); // put card down
