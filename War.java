@@ -81,7 +81,28 @@ public class War extends CardGame {//war is a subclass of CardGame
 		System.out.println("Your opponents card was: " + ((WarAI) AI).table.get(0)); // prints out AI's card
 		boolean tie = true; 
 		int tieNo = 1; // tie counter in case of multiple ties
-		while (tie == true) { // while there is still a tie
+		while (tie == true){ // while there is still a tie
+		    if (((WarUser)user).hand.size()<2) {
+			for (int x = 0; x < ((WarUser)user).hand.size() ; x++ ) {
+			    ((WarAI) AI).hand.add(((WarUser) user).hand.remove(x));
+			}
+			for (int x = user.table.size()-1; x >0  ; x--) {// loop for printint out all cards played in the tie
+			    ((WarAI) AI).hand.add(((WarAI) AI).table.remove(x));// adds card to AI's hand
+			    ((WarAI) AI).hand.add(((WarUser)user).table.remove(x));// adds card to user's hand
+				}
+			return;
+		    }
+		    if (((WarAI)AI).hand.size()<2) {
+			for (int x = 0; x < ((WarAI)AI).hand.size() ; x++ ) {
+			    ((WarUser) user).hand.add(((WarAI) AI).hand.remove(x));
+			}
+			for (int x = user.table.size()-1; x >0  ; x--) {// loop for printint out all cards played in the tie
+			    ((WarUser) user).hand.add(((WarAI) AI).table.remove(x));// adds card to user's hand
+			    ((WarUser) user).hand.add(((WarUser)user).table.remove(x));// adds card to user's hand
+				}
+			return;
+		    }
+		   
 		    ((WarAI) AI).tie();//AI's tie method
 		    ((WarUser)user).tie();//User's tie method
 		    if (((WarUser)user).table.get(2*tieNo).value == ((WarAI) AI).table.get(2*tieNo).value) { // if there is still a tie
